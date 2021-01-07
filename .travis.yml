@@ -1,5 +1,7 @@
 # Project language
 language: php
+php:
+  - 7.3.24
 
 # Allows use container-based infrastructure
 sudo: false
