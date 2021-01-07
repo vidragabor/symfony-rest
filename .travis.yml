@@ -1,7 +1,7 @@
 # Project language
 language: php
 php:
-  - 7.3.24
+  - 7.3
 
 # Allows use container-based infrastructure
 sudo: false
@@ -27,10 +27,11 @@ before-install:
 # Create database, schema and fixtures
 install:
   - composer install
-  - php bin/console doctrine:database:create
-  - php bin/console doctrine:schema:create
-  - php bin/console doctrine:fixtures:load
+  - mysql -e 'CREATE DATABASE test_db;'
+  - php bin/console doctrine:database:create --env=test
+  - php bin/console doctrine:schema:create --env=test
+  - php bin/console doctrine:fixtures:load -n --env=test
 
 # Run script
 script:
-  - phpunit
+  - bin/phpunit tests/
