@@ -1,5 +1,7 @@
 # Symfony REST sample project
 
+[![Build Status](https://travis-ci.com/vidragabor/symfony-rest.svg?branch=main)](https://travis-ci.com/vidragabor/symfony-rest)
+
 A simple REST project where data can be queried and modified using HTTP methods.
 
 ## Available public methods

@@ -1,10 +1,11 @@
+# Build Environment
+dist: xenial
+os: linux
+
 # Project language
 language: php
 php:
   - 7.3
-
-# Allows use container-based infrastructure
-sudo: false
 
 # Start mysql service
 services:
@@ -20,7 +21,7 @@ env:
   - DB=mysql
 
 # Update composer
-before-install:
+before_install:
   - composer self-update
 
 # Install composer dependencies,
